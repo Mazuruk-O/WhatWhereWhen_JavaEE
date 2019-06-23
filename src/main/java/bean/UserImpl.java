@@ -20,7 +20,7 @@ public class UserImpl implements User, Serializable,Cloneable {
     private int level;
     private Language language;
 
-    public UserImpl(long id, Map<String, String> contact, String firstname, String surname, String lastname, Date dateBirthday, int level, Language language) {
+    public UserImpl(long id, String firstname, String surname, String lastname, Date dateBirthday, int level, Language language) {
         this.id = id;
         this.contact = contact;
         this.firstname = firstname;
@@ -66,7 +66,7 @@ public class UserImpl implements User, Serializable,Cloneable {
     public User clone(long newId) {
         if (this == NULL_USER) return NULL_USER;
 
-        return new UserImpl(newId, contact, firstname, surname, lastname, dateBirthday, level, language);
+        return new UserImpl(newId, firstname, surname, lastname, dateBirthday, level, language);
     }
 
     @Override

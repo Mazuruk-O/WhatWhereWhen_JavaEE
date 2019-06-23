@@ -1,5 +1,6 @@
 package model.repository;
 
+import java.sql.Connection;
 import java.util.List;
 
 public interface Repository<T> {
@@ -7,5 +8,6 @@ public interface Repository<T> {
     void remove(T remove);
     void update(T update);
 
+    public void setConnection(Connection connection);
     List<T> query(Specification specification);
 }
